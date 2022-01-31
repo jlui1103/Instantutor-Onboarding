@@ -1,0 +1,1 @@
+For more info go to https://github.com/bradtraversy/react-crash-2021
