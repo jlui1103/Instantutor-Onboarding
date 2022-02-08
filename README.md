@@ -3,6 +3,13 @@ A repository with tutorial material to onboard new members
 
 Welcome to first time developers or anyone who would like to learn the different technologies used in the Instantutor repository!
 
+All practice material included was made by following tutorials from the youtube channel Brad Traversey.
+
+You can find the specific videos here:
+* [React Tutorial](https://www.youtube.com/watch?v=w7ejDZ8SWv8)
+* [Node Tutorial](https://www.youtube.com/watch?v=fBNz5xF-Kx4)
+* [Express Tutorial](https://www.youtube.com/watch?v=L72fhGm1tfE)
+
 ## Git and Github
 
 To start with you are going to need to be able to know how to use git. To do this first start by making sure you have git downloaded. You can do this by typing the following command into the terminal:
