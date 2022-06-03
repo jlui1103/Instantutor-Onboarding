@@ -2,7 +2,7 @@
 
 ## Basic
 
-To get started follow the tutorials below:
+To get started create a directory named practice and follow the tutorials below:
 * [Node Tutorial](https://www.youtube.com/watch?v=fBNz5xF-Kx4)
 * [Express Tutorial](https://www.youtube.com/watch?v=L72fhGm1tfE)
 
