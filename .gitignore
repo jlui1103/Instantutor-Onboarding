@@ -1,2 +1,2 @@
-react-practice/node_modules/
-react-practice/package-lock.json
+react-practice/*/node_modules
+express-practice/*/node_modules
