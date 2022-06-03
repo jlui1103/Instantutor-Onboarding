@@ -35,3 +35,6 @@ I'm done with this tutorial:
 * Samyuth
 
 If you can do the above you know all the basic commands you need to contribute to this repository.
+
+Other materials:
+* https://learngitbranching.js.org/
