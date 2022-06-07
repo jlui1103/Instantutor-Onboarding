@@ -10,6 +10,7 @@ You can find the specific videos here:
 * [Node Tutorial](https://www.youtube.com/watch?v=fBNz5xF-Kx4)
 * [Express Tutorial](https://www.youtube.com/watch?v=L72fhGm1tfE)
 
+
 ## Git and Github
 
 To start with you are going to need to be able to know how to use git. To do this first start by making sure you have git downloaded. You can do this by typing the following command into the terminal:
@@ -39,3 +40,20 @@ If you can do the above you know all the basic commands you need to contribute t
 
 Other materials:
 * https://learngitbranching.js.org/
+
+## HTML and CSS
+
+HTML is a markup language in other words a way to specify the layout of a page similar to latex. Visually however you can not acheive many styles with html which is where CSS comes in, with CSS simply being styles that can be added to html. It is recommended you go through at least the first 5 lessons of the W3 schools tutorials for each of these and read through more as you come across ideas you don't understand.
+* [HTML W3 Schools](https://www.w3schools.com/html/)
+* [CSS W3 Schools](https://www.w3schools.com/css/)
+
+## Javascript
+
+Javascript is a scripting language used on the web. It is a very highlevel interpreted language with dynamic typing like python however users will recognize a much closer similarity in syntax to c or c++.
+
+The following are special features or quirks of the language that are important to know for web development:
+* [Arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+* [Ternary operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator)
+* [Object deconstruction](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+* [Array methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) (Look into methods like map and filter in particular)
+* [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) and [async/await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
