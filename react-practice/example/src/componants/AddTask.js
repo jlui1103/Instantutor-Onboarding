@@ -1,6 +1,8 @@
 import { useState } from 'react'
+import { connect } from 'react-redux'
+import { addTask } from '../actions/tasks'
 
-const AddTask = ({ onAdd }) => {
+const AddTask = ({ addTask : onAdd }) => {
   const [text, setText] = useState('')
   const [day, setDay] = useState('');
   const [reminder, setReminder] = useState(false)
@@ -52,4 +54,4 @@ const AddTask = ({ onAdd }) => {
   )
 }
 
-export default AddTask
+export default connect (null, {addTask})(AddTask)

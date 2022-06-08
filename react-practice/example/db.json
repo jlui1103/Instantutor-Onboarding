@@ -15,7 +15,7 @@
     {
       "text": "Complete Instantutor Tutorial",
       "day": "July 8th at 12:00pm",
-      "reminder": true,
+      "reminder": false,
       "id": 3
     }
   ]

@@ -1,6 +1,9 @@
 import Task from './Task'
+import { connect } from 'react-redux'
+import { deleteTask } from '../actions/tasks'
 
-const Tasks = ({tasks, onDelete, onToggle}) => {
+const Tasks = ({tasks, deleteTask : onDelete, onToggle}) => {
+
   // using a list with a key prop
   return (
     <>
@@ -16,4 +19,4 @@ const Tasks = ({tasks, onDelete, onToggle}) => {
   )
 }
 
-export default Tasks
+export default connect(null, { deleteTask })(Tasks)

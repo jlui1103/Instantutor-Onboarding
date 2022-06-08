@@ -1,10 +1,12 @@
 import { FaTimes } from 'react-icons/fa'
+import { connect } from 'react-redux'
+import { editTask } from '../actions/tasks'
 
-const Task = ({ task, onDelete, onToggle }) => {
+const Task = ({ task, onDelete, onToggle, editTask }) => {
   return (
     <div
     className={`task ${task.reminder ? 'reminder' : ''}`}
-    onDoubleClick={ () => onToggle(task.id)}>
+    onDoubleClick={ () => editTask(task.id, { ...task , reminder: !task.reminder })}>
       <h3>
         {task.text}
         <FaTimes
@@ -17,4 +19,4 @@ const Task = ({ task, onDelete, onToggle }) => {
   )
 }
 
-export default Task
+export default connect(null, { editTask })(Task)
