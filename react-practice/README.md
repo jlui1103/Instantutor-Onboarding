@@ -65,6 +65,6 @@ These are some extra details needed to be able to understand how to implement th
 3. When making calls to API's it should be expected that there are errors. To account for this all actions should generally be wrapped in try catch blocks, an example of this can be seen with the delete action in the example directory and there should be an error type for each reducer. The error type used in the example is TASK_ERROR.
 4. When using an action inside of a useEffect hook make sure that the name of the action is inside the useEffect's dependency array. Look at an example of this in [App.js](https://github.com/Instantutor/Instantutor-Onboarding/blob/main/react-practice/example/src/App.js).
 
-For some final tips, make sure you are refering the the example that is already up, don't be afraid to google and if you want to get an idea of what was changed look at this commit.
+For some final tips, make sure you are refering the the example that is already up, don't be afraid to google and if you want to get an idea of what was changed to make the app work with redux look at [this commit](https://github.com/Instantutor/Instantutor-Onboarding/commit/53c8f6b635d0ee53ec1d6c97103dd1deb60c4ab1).
 
 *Note: Currently this repo uses an older version of the Redux libarary as that is what is currently present in Instantutor. This module will be updated if a migration to the newest version of redux occurs in the main repo.*
