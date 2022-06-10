@@ -2,6 +2,8 @@
 
 Welcome to the backend tutorial module with express.js and mongodb! This module will be broken into several sections and each section will contain resources to learn the specific technologies and concepts. There may be certain concepts that are not required to work on Instantutor but may be good to look into and these will be indicated.
 
+It is also very strongly recommend that you create a directory called practice in your branch and in that directory attempt to follow along with the tutorials. This is most relevant for the express tutorials and actually making the practice app is easy if you are following the video so there is nothing to lose. It is also very useful to come back and experiemnt later.
+
 ## API and HTTP
 
 To get some background on what an API in the context of web development even is first watch until the 11:34 mark for [this](https://www.youtube.com/watch?v=Q-BpqyOT3a8) video on RESTful APIs. It may be helpful to watch further along into the video but unecessary as the next video will work through the topic in a little more depth.
@@ -28,4 +30,22 @@ A quick point to note about middlewares and routes however is that you can chain
 ```
 router.get('/:id', logger, logger, [logger, logger, logger], (req, res) => res.send("Hi :)")
 ```
-The reason this is significatn is that it allows for route specific middlewares such as auth and validators as described in the sub-sections below.
+The reason this is significatn is that it allows for route specific middlewares such as auth and validators which are described in the sub-sections below.
+
+### Express validator
+
+For a lot of routes it is useful to do a check to see if the request body or any of the paramaters have invalid values. This can be checked in the route itself however it is useful to get familiar with express-validator especially when there are routes with a lot of checks for the values or if you have the same checks in multiple routes.
+
+Express validator works using validation chains where you specify a field and then run a chain of checks as needed. To run the checks you can simply the code below at the beggining of the logic for an API route.
+```
+const errors = validationResult(req);
+
+if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+}
+```
+
+An example of how these checks can be used can be found in [members.js](https://github.com/Instantutor/Instantutor-Onboarding/blob/main/express-practice/Example/routes/api/members.js) in the example directory. Documentation for what methods are available in the validation chain can be found on [this](https://express-validator.github.io/docs/validation-chain-api.html) page. Some notable methods are:
+* .withMessage which lets you define a custom message for the errors up to that point
+* .bail that will not let the following checks run if any of the previous have failed
+* .custom which allows you to make a custom check

@@ -2,6 +2,16 @@ const express = require('express');
 const uuid = require('uuid');
 const router = express.Router();
 const members = require('../../Members');
+const { check, validationResult } = require('express-validator');
+
+const creation_checks = [
+  check("email").custom((val) => {
+    console.log(val);
+    return true;
+  }).notEmpty().withMessage("User must have an email").bail()
+    .isString().isEmail().withMessage("Email must be valid"),
+  check("name").notEmpty().withMessage("User must have a name").bail().isString()
+];
 
 const idFilter = req => member => member.id === parseInt(req.params.id);
 
@@ -20,16 +30,21 @@ router.get('/:id', (req, res) => {
 });
 
 // Create Member
-router.post('/', (req, res) => {
+router.post('/', creation_checks, (req, res) => {
+
+  console.log(req.body);
+
+  const errors = validationResult(req);
+
+  if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+  }
+
   const newMember = {
     ...req.body,
     id: uuid.v4(),
     status: 'active'
   };
-
-  if (!newMember.name || !newMember.email) {
-    return res.status(400).json({ msg: 'Please include a name and email' });
-  }
 
   members.push(newMember);
   res.json(members);
@@ -37,7 +52,14 @@ router.post('/', (req, res) => {
 });
 
 // Update Member
-router.put('/:id', (req, res) => {
+router.put('/:id', check("email").optional().isEmail(), (req, res) => {
+
+  const errors = validationResult(req);
+
+  if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+  }
+
   const found = members.some(idFilter(req));
 
   if (found) {
