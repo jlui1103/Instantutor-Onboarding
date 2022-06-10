@@ -19,3 +19,13 @@ In particular from [22:50-47:00](https://www.youtube.com/watch?v=fBNz5xF-Kx4&t=1
 If curious it may also be worth watching from [47:00-56:00](https://www.youtube.com/watch?v=fBNz5xF-Kx4) as there is information on the event and listener API in js. This is similar to the observable and observer interface and may be useful in creating or using certain middlewares.
 
 The rest of the video from 56:00 onwards is unnecessary as HTTP and server creation in vanilla node.js is uneccesary due to the express.js libarary/framework. Deployment for Instantutor is also on AWS and Digital Ocean with the application being too large for Heroku.
+
+## Express.js
+
+Watch Brad Traversey's [Express.js Tutorial](https://www.youtube.com/watch?v=L72fhGm1tfE) up to 57:54. Beyond this point the information is unnecessary for Instantutor as the frontend is dynamic and only one utility uses any templating.
+
+A quick point to note about middlewares and routes however is that you can chain any number of middlewares on a specific API route or the app as a whole as you use. The below is syntactically valid and will simply repeat the same function 5 times.
+```
+router.get('/:id', logger, logger, [logger, logger, logger], (req, res) => res.send("Hi :)")
+```
+The reason this is significatn is that it allows for route specific middlewares such as auth and validators as described in the sub-sections below.
