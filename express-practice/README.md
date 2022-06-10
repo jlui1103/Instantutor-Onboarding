@@ -6,11 +6,11 @@ It is also very strongly recommend that you create a directory called practice i
 
 ## API and HTTP
 
-To get some background on what an API in the context of web development even is first watch until the 11:34 mark for [this](https://www.youtube.com/watch?v=Q-BpqyOT3a8) video on RESTful APIs. It may be helpful to watch further along into the video but unecessary as the next video will work through the topic in a little more depth.
+To get some background on what a Web API even is, first watch until the 11:34 mark for [this](https://www.youtube.com/watch?v=Q-BpqyOT3a8) video on RESTful APIs. It may be helpful to watch further along into the video but unecessary as the next video will work through the topic in a little more depth.
 
 The next video to watch is HTTP, watch [this](https://www.youtube.com/watch?v=iYM2zFP3Zn0) video until the 17:44 mark. It is key that you make sure you download postman and work through those examples. Aditionally if you have a linux based system (there is a similar utility for windows cmd) you can use the curl command which will do the same thing just on the command line. It may not be as conveniant but what is nice about this is that when you right click a request in the network tab you have the option to copy a request as a curl command.
 
-For some final background it may also be helpful to understand what json web tokens are. These will be expanded on further along in the express.js secotion however long story short these are temporary tokens that are required to access certain routes similar to OAuth tokens. 
+For some final background it may also be helpful to understand what json web tokens are. These are like OAuth tokens and they are able to convey certain information. Most importantly they are able to encode the expiration date as well as potentially a "secret". You can play around pasting differnt JWTs in [jwt.io](https://jwt.io/)
 
 ## Node.js
 
@@ -49,3 +49,13 @@ An example of how these checks can be used can be found in [members.js](https://
 * .withMessage which lets you define a custom message for the errors up to that point
 * .bail that will not let the following checks run if any of the previous have failed
 * .custom which allows you to make a custom check
+
+### Mongodb and Mongoose
+
+To get some background on what mongodb is watch up to 4:00 of [this](https://www.youtube.com/watch?v=2QQGWYe7IDU) video. If you would like to further understand mongodb and how to set it up as well as the compass client and command line access you may watch the rest of the video as well. Only the background is required to make basic contributions to Instantutor but if you would like to change the set up or migrate from atlas to a local db for example it is recommended you watch the full video.
+
+Next up is mongoose which is what is called an object relational for Mongodb in Node.js. This means it allows you to interact with mongodb using mongodb commands and queries and such in Node.js directly. The two most relavant parts of it's API are the schema constructor and model methods.
+
+An example of the use of the schema constructor can be seen in [this](https://github.com/Instantutor/Instantutor/blob/main/server/models/Post.js) schema in the main repository. Essentially the schema has the structure of the BSON objects with options to denote wether a particular part of the schema is required and what a default value is for example. Some additional documentation on schema options can be found [here](https://mongoosejs.com/docs/api/schematypeoptions.html).
+
+Model methods are generally used in the API routes as the allow you to perform all the CRUD options with methods like find, delete, update, create as well as methods that are a mix or have special properties like findOne, findByIdandDelete or findOneandUpdate. Documentation on these different methods can be found [here](https://mongoosejs.com/docs/api.html#Model). Additionally many of these methods allow you to use mongo queries for which further information can be found [here](https://www.mongodb.com/docs/manual/tutorial/query-documents/)
