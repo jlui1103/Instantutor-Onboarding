@@ -67,6 +67,7 @@ router.put('/:id', check("email").optional().isEmail(), (req, res) => {
       if (idFilter(req)(member)) {
 
         const updMember = {...member, ...req.body};
+        console.log(updMember);
         members[i] = updMember
         res.json({ msg: 'Member updated', updMember });
       }
